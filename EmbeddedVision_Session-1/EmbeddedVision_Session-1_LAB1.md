@@ -6,28 +6,30 @@ Version 1.0, 11/26/2017
 **Downloading the Debian Installer**
 
 *Refer to 96Boards Website and download the installer image*
-
-^dieter:> wget http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/dragonboard410c_sdcard_install_debian-283.zip
+```shell
+dieter:> wget http://builds.96boards.org/releases/dragonboard410c/linaro/debian/latest/dragonboard410c_sdcard_install_debian-283.zip
 …
 dieter:> unzip ./dragonboard410c_sdcard_install_debian-283.zip
 dieter:> ls
-dragonboard410c_sdcard_install_debian-283.zip  EmbeddedVision_Session-1  README.md^
+dragonboard410c_sdcard_install_debian-283.zip  EmbeddedVision_Session-1  README.md
+```
 
 *Unzip file:*
 
 
-^dieter:> unzip dragonboard410c_sdcard_install_debian-283.zip 
+```shell
+dieter:> unzip dragonboard410c_sdcard_install_debian-283.zip 
 Archive:  dragonboard410c_sdcard_install_debian-283.zip
   inflating: db410c_sd_install_debian.img  
   inflating: LICENSE                 
-^
+```
 
 **Find out the right SD-Card Device**
 ==Caution: If you chose the wrong device, you might delete your whole harddrive!==
 
 Ensure that SD-Card is not inserted in your PC and run lsblk command:
-
-^dieter:> lsblk
+```shell
+dieter:> lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 465,8G  0 disk 
 ├─sda1   8:1    0   450M  0 part 
@@ -36,12 +38,14 @@ sda      8:0    0 465,8G  0 disk
 ├─sda4   8:4    0 186,5G  0 part 
 └─sda5   8:5    0 278,7G  0 part /
 sr0     11:0    1  1024M  0 rom  
-dieter:>^
+dieter:>
+```
 
 Now we insert the SD-Card in our PC and run lsblk command again.
 Please note that internal SD-Card reader usuall can not be forwarded into a Virtual Machine!
 
-^dieter:> lsblk
+```shell
+dieter:> lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda      8:0    0 465,8G  0 disk 
 ├─sda1   8:1    0   450M  0 part 
@@ -57,7 +61,8 @@ sda      8:0    0 465,8G  0 disk
 ├─sdc5   8:37   1    16K  0 part 
 └─sdc6   8:38   1     1M  0== part                                                                                                                                                
 sr0     11:0    1  1024M  0 rom                                                                                                                                                 
-dieter:>^
+dieter:>
+```
 
 We do see that **/dev/sdc** is the newly recognized device which is our SD-Card.
 
@@ -65,13 +70,14 @@ We do see that **/dev/sdc** is the newly recognized device which is our SD-Card.
 
 To flash the image we need to be root - this can be achieved with sudo command:
 
-^dieter:> sudo dd if=./db410c_sd_install_debian.img of=/dev/sdc bs=4M oflag=sync
+```shell
+dieter:> sudo dd if=./db410c_sd_install_debian.img of=/dev/sdc bs=4M oflag=sync
 [sudo] Passwort für dieter: 
 962+0 Datensätze ein
 962+0 Datensätze aus
 4034920448 Bytes (4,0 GB, 3,8 GiB) kopiert, 293,807 s, 13,7 MB/s
 dieter:>
-^
+```
 
 **Booting the DB4 from SD-Card**
 
