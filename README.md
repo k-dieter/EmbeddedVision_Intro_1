@@ -4,12 +4,13 @@ Intention of this repository is to create a very quick overview about embedded v
 We will use a very cost efficient yet powerful ARM board based on a Qualcomm Snapdragon 410 called DB4 from Geniatech
 You can find more information about the Dragonboard 410c and DB4 here:
 https://www.96boards.org/product/dragonboard410c/
+
 https://www.geniatech.com/product/developer-board-4/
 
-Availabe here:
+The mentioned boards are availabe to buy here:
 https://www.arrow.com/de-de/products/gt-db420170309/geniatech-inc
 
-This covers training material as well as easy to use sample programms
+This course covers training material as well as easy to use sample programms
 
 Agenda of this course:
 
