@@ -17,9 +17,9 @@ Agenda of this course:
 
 **Session 1**
 - Overview about the used Hardware
-	- Dragonboard 410c
+	- DB4
 	- Basler Camera
-- Bring up of the Dragonboard and flash Linaro Debian
+- Bring up of the DB4 and flash Linaro Debian
 - pre requisites and installation of required software
 
 **Session 2**
