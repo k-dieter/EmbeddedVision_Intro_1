@@ -19,24 +19,4 @@ Default installation dir is /opt/pylon
 
 To ensure if the installation is working correct and to verify correct operation of the camera we do a quick test by starting pylon viewer and test if we can get images:
 
-**Connect the camera to a free USB port of the DB4 and check the output of dmesg**
- 
-```shell
-dieter:> dmesg | grep Basler
-
-```
-**Start pylonViewer**
-
-```shell
-dieter:> cd /opt/pylon/bin
-dieter:> ./pylon-Viewer
-```
-
-The output needs to look as shown below:
-![pylonViewer](./Images/Screenshot_20171127_233842.png  "pylonViewer")
-
-**Setup pylonViewer**
-
-To display images we need to select the camera and press the "aquire image" button:
-
 
